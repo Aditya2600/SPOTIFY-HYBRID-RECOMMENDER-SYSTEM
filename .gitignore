@@ -173,9 +173,4 @@ cython_debug/
 # virtualenv
 .venv/
 
-# Don't track large model/data files manually
-/data/
 /transformer.joblib
-.DS_Store
-/dvc.lock
-/dvc.yaml
