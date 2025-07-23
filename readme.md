@@ -37,6 +37,7 @@ A full-fledged hybrid recommender system that combines **content-based filtering
 
 ## 📁 Project Structure
 
+```
 spotify-hybrid-recommender-system/
 │
 ├── app.py                  # Streamlit app entry point
@@ -53,30 +54,33 @@ spotify-hybrid-recommender-system/
 │   └── aws_utils.py        # S3 file fetching
 ├── requirements.txt
 └── README.md
-
+```
 ---
 
 ## 📦 Installation & Running Locally
 
+
+### 1. Clone the repository
 ```bash
-# 1. Clone the repository
 git clone https://github.com/Aditya2600/SPOTIFY-HYBRID-RECOMMENDER-SYSTEM
 cd spotify-hybrid-recommender-system
+```
 
 
-
-# 3. Install dependencies
+### 3. Install dependencies
+```bash
 pip install -r requirements.txt
+```
 
 
-
-# 5. Run Streamlit app
+### 5. Run Streamlit app
+```bash
 streamlit run app.py
-
+```
 
 ⸻
 
-🔍 Datasets Used
+## 🔍 Datasets Used
 	•	User Listening History.csv: User-song interaction dataset.
 	•	collab_filtered_data.csv: Final dataset for content-based filtering.
 	•	transformed_data.npz: Sparse matrix from collaborative filtering.
@@ -86,23 +90,24 @@ streamlit run app.py
 
 ⸻
 
-🧪 Recommender Modes
+## 🧪 Recommender Modes
 
-1. 🎯 Content-Based
+
+### 1. 🎯 Content-Based
 
 Uses song metadata like tempo, genre, duration, mode, etc.
 
 from content_based import get_content_recommendations
 recommendations = get_content_recommendations(song_title)
 
-2. 🤝 Collaborative Filtering
+### 2. 🤝 Collaborative Filtering
 
 Based on user behavior similarity using cosine similarity on sparse matrix.
 
 from collaborative import get_collab_recommendations
 recommendations = get_collab_recommendations(song_title)
 
-3. 🔁 Hybrid
+### 3. 🔁 Hybrid
 
 Combines both approaches with custom weights.
 
