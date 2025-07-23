@@ -34,4 +34,4 @@ stages:
       - transform_filtered_data.py
       - data/collab_filtered_data.csv
     outs:
-      - data/transformed_hybrid_data.npzc
+      - data/transformed_hybrid_data.npz
