@@ -175,3 +175,5 @@ cython_debug/
 
 /transformer.joblib
 .vscode
+# Ignore macOS system files
+.DS_Store
