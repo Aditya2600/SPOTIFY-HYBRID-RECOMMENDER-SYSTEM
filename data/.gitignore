@@ -12,3 +12,4 @@ MP3-Example/
 
 # Ignore macOS system files
 .DS_Store
+/transformed_hybrid_data.npz
