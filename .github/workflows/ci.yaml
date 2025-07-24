@@ -29,7 +29,7 @@ jobs:
 
       - name: DVC Pull
         run: |
-          dvc pull --force
+          dvc pull 
 
       - name: Run Appllication
         run: |
