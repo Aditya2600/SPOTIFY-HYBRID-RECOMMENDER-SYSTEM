@@ -119,6 +119,31 @@ from hybrid import get_hybrid_recommendations
 recommendations = get_hybrid_recommendations(song_title)
 
 ---
+---
+
+🖥️ **Streamlit UI Preview**
+
+### 🎛️ User Input Interface
+
+Users can enter a song name and artist name, choose the number of recommendations, and select the diversity level for hybrid mode.
+
+![User Input Interface](assets/user_input_screenshot.png)
+
+---
+
+### 🎧 Recommendation Output
+
+After clicking “Get Recommendations”, the app displays:
+
+- 🎵 Currently Playing song  
+- 🎶 Next Up tracks with audio previews  
+- 📊 A diversity breakdown bar chart  
+
+![Recommendation Output](assets/recommendation_output_screenshot.png)
+
+---
+
+These UI snapshots demonstrate real-time interaction and personalized music recommendations using content-based or hybrid logic.
 
 ## ☁️ Deployment Overview
 
@@ -137,7 +162,6 @@ This project is deployed using a fully automated CI/CD pipeline on AWS. The infr
 ## ☁️ Deployment Snapshots
 
 <p align="center">
-  <img src="assets/ec2-instance.png" width="600" alt="EC2 Instance Running"/>
   <img src="assets/deployment-complete.png" width="600" alt="CodeDeploy Success"/>
   <img src="assets/streamlit-on-ec2.png" width="600" alt="App Running on EC2"/>
 </p>
@@ -148,6 +172,34 @@ This project is deployed using a fully automated CI/CD pipeline on AWS. The infr
   <img src="assets/github-actions-success.png" width="600" alt="CI/CD Success"/>
 </p>
 
+---
+
+## 🔐 IAM Roles Overview
+
+To enable secure and automated deployment of the Spotify Hybrid Recommender System on AWS, the following IAM roles were configured:
+
+![IAM Roles Summary](assets/iam-roles-summary.png)
+
+## 🪣 S3 Bucket Configuration
+
+This project uses an S3 bucket to store deployment artifacts like deployment.zip used in AWS CodeDeploy.
+![S3 bucket](assets/S3 bucket.png)
+
+## 🐳 Amazon ECR – Docker Image
+
+This project uses Amazon Elastic Container Registry (ECR) to store and manage Docker images for deployment on EC2 via AWS CodeDeploy.
+![ECR Image pushed](assets/ECR_Image_pushed.png)
+
+### Key Roles
+
+- **codedeploy-service-role**: Grants AWS CodeDeploy permission to manage deployments across EC2 instances and interact with Auto Scaling.
+- **ec2_codedeploy_role**: Allows EC2 instances to access S3 buckets and pull application bundles during deployment.
+- **ec2_ecr_role3**: Grants EC2 permission to pull Docker images from Amazon ECR securely.
+- **AWSServiceRoleForAutoScaling**: Auto-assigned role to manage Auto Scaling operations during blue/green deployments.
+- **AWSServiceRoleForElasticLoadBalancing**: Used for managing load balancer configurations.
+- **AWSServiceRoleForSupport / TrustedAdvisor**: Default AWS service-linked roles that enhance infrastructure monitoring.
+
+> 🔒 These roles ensure that deployment workflows via GitHub Actions, CodeDeploy, and Docker containers on EC2 operate securely and with least-privilege access.
 ⸻
 
 🧾 Credits
