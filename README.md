@@ -1,6 +1,6 @@
 # 🎧 Spotify Hybrid Recommender System
 
-A full-fledged hybrid recommender system that combines **content-based filtering** and **collaborative filtering** techniques to recommend songs similar to the user's taste. Built with Python, deployed on Streamlit, and integrated with AWS S3 for dynamic data loading.
+A full-stack hybrid recommender system that combines **content-based filtering** and **collaborative filtering** to suggest songs aligned with user preferences. Built with Python and Streamlit, integrated with AWS for scalable deployment and dynamic data access.
 
 ---
 
@@ -9,7 +9,7 @@ A full-fledged hybrid recommender system that combines **content-based filtering
 - 🎵 **Collaborative Filtering**: Uses user listening history and cosine similarity on sparse matrices.
 - 🧠 **Content-Based Filtering**: Leverages metadata like artist, genre, tempo, and more.
 - 🔄 **Hybrid Mode**: Combines both methods for balanced and accurate recommendations.
-- 🌐 **Deployed on Streamlit Cloud**: Interactive web app with clean UI.
+- ☁️ **Cloud Deployment** — Deployed on Streamlit Cloud and AWS EC2 using a CI/CD pipeline.
 
 
 ---
@@ -24,14 +24,16 @@ A full-fledged hybrid recommender system that combines **content-based filtering
 
 ## 🛠️ Tech Stack
 
-| Tool             | Usage                          |
-|------------------|--------------------------------|
-| Python           | Core logic                     |
-| Pandas, NumPy    | Data wrangling                 |
-| SciPy, Scikit-learn | Similarity & model computation |
-| Streamlit        | Frontend deployment            |
-| Dask             | Scalable large CSV processing  |
-| Matplotlib/Seaborn | Data visualization (EDA)     |
+| Tool                | Purpose                             |
+|---------------------|-------------------------------------|
+| Python              | Core development language           |
+| Pandas, NumPy       | Data processing & manipulation      |
+| Scikit-learn, SciPy | Similarity calculations             |
+| Dask                | Parallel computation on large data  |
+| Streamlit           | Web UI                              |
+| AWS EC2/S3/ECR      | Deployment, storage, and images     |
+| Docker              | Containerization                    |
+| GitHub Actions      | CI/CD automation                    |
 
 ---
 
@@ -40,18 +42,20 @@ A full-fledged hybrid recommender system that combines **content-based filtering
 ```
 spotify-hybrid-recommender-system/
 │
-├── app.py                  # Streamlit app entry point
-├── collaborative.py        # Collaborative filtering logic
-├── content_based.py        # Content-based recommendation logic
-├── hybrid.py               # Combined recommender system
+├── app.py                         # Streamlit entry point
+├── collaborative.py               # Collaborative filtering logic
+├── content_based.py               # Content-based filtering logic
+├── hybrid.py                      # Hybrid recommender
 ├── data/
-│   ├── transformed_data.npz       # Sparse matrix (collaborative)
-│   ├── track_ids.npy              # Index mapping
-│   ├── collab_filtered_data.csv  # Track metadata (content-based)
-│   └── … (other datasets)
+│   ├── transformed_data.npz       # Collaborative sparse matrix
+│   ├── track_ids.npy              # Index-to-ID mapping
+│   ├── collab_filtered_data.csv  # Metadata for content-based filtering
 ├── utils/
-│   ├── preprocessing.py    # Preprocessing utilities
-│   └── aws_utils.py        # S3 file fetching
+│   ├── preprocessing.py           # Data cleaning functions
+│   └── aws_utils.py               # S3 integration
+├── deploy/
+│   └── scripts/                   # EC2 Docker startup and setup
+├── notebooks/                     # EDA and model tuning
 ├── requirements.txt
 └── README.md
 ```
@@ -114,12 +118,27 @@ Combines both approaches with custom weights.
 from hybrid import get_hybrid_recommendations
 recommendations = get_hybrid_recommendations(song_title)
 
+## ☁️ Deployment Overview
 
+The project uses Dockerized deployment on an AWS EC2 instance with:
+	•	CI/CD via GitHub Actions
+	•	AWS CodeDeploy for automation
+	•	ECR for pushing the container image
+	•	S3 for uploading deployment bundles
 
+## ☁️ Deployment Snapshots
 
+<p align="center">
+  <img src="assets/ec2-instance.png" width="600" alt="EC2 Instance Running"/>
+  <img src="assets/deployment-complete.png" width="600" alt="CodeDeploy Success"/>
+  <img src="assets/streamlit-on-ec2.png" width="600" alt="App Running on EC2"/>
+</p>
 
+### ✅ CI/CD Log Snapshot
 
-
+<p align="center">
+  <img src="assets/github-actions-success.png" width="600" alt="CI/CD Success"/>
+</p>
 
 ⸻
 
