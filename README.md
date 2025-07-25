@@ -183,7 +183,7 @@ To enable secure and automated deployment of the Spotify Hybrid Recommender Syst
 ## 🪣 S3 Bucket Configuration
 
 This project uses an S3 bucket to store deployment artifacts like deployment.zip used in AWS CodeDeploy.
-![S3 bucket](assets/S3 bucket.png)
+![S3 bucket](assets/S3_bucket.png)
 
 ## 🐳 Amazon ECR – Docker Image
 
