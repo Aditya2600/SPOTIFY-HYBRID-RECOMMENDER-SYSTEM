@@ -118,14 +118,22 @@ Combines both approaches with custom weights.
 from hybrid import get_hybrid_recommendations
 recommendations = get_hybrid_recommendations(song_title)
 
+---
+
 ## ☁️ Deployment Overview
 
-The project uses Dockerized deployment on an AWS EC2 instance with:
-	•	CI/CD via GitHub Actions
-	•	AWS CodeDeploy for automation
-	•	ECR for pushing the container image
-	•	S3 for uploading deployment bundles
+This project is deployed using a fully automated CI/CD pipeline on AWS. The infrastructure and flow include:
 
+- 🚀 **CI/CD via GitHub Actions** – Automates build, test, and deployment steps.
+- 📦 **Dockerized Application** – The app is containerized using Docker for consistency across environments.
+- 🐳 **Amazon ECR (Elastic Container Registry)** – Stores and manages the Docker image.
+- 📁 **Amazon S3** – Hosts the deployment bundle (`appspec.yml`, shell scripts, etc.) used by CodeDeploy.
+- 🤖 **AWS CodeDeploy** – Handles the automated deployment process to the EC2 instance.
+- 💻 **EC2 Instance (Ubuntu)** – Runs the production-ready Streamlit app.
+
+> 💡 The deployment is production-grade, enabling seamless updates with each `git push`.
+
+---
 ## ☁️ Deployment Snapshots
 
 <p align="center">
