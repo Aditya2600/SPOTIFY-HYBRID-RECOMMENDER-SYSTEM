@@ -174,12 +174,6 @@ This project is deployed using a fully automated CI/CD pipeline on AWS. The infr
 
 ---
 
-## 🔐 IAM Roles Overview
-
-To enable secure and automated deployment of the Spotify Hybrid Recommender System on AWS, the following IAM roles were configured:
-
-![IAM Roles Summary](assets/iam-roles-summary.png)
-
 ## 🪣 S3 Bucket Configuration
 
 This project uses an S3 bucket to store deployment artifacts like deployment.zip used in AWS CodeDeploy.
@@ -189,6 +183,12 @@ This project uses an S3 bucket to store deployment artifacts like deployment.zip
 
 This project uses Amazon Elastic Container Registry (ECR) to store and manage Docker images for deployment on EC2 via AWS CodeDeploy.
 ![ECR Image pushed](assets/ECR_Image_pushed.png)
+
+## 🔐 IAM Roles Overview
+
+To enable secure and automated deployment of the Spotify Hybrid Recommender System on AWS, the following IAM roles were configured:
+
+![IAM Roles Summary](assets/iam-roles-summary.png)
 
 ### Key Roles
 
