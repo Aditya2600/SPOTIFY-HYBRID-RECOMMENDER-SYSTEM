@@ -19,6 +19,11 @@ A full-stack hybrid recommender system that combines **content-based filtering**
 🔗 **Live App**: [Streamlit App](https://aditya2600-spotify-hybrid-recommender-system-app-nw68nq.streamlit.app)
 
 
+---
+## 🎛️ Frontend Demo (React)
+
+![Frontend Demo](assets/demo_ui.png)
+
 
 ---
 
@@ -153,11 +158,6 @@ After clicking “Get Recommendations”, the app displays:
 ---
 
 These UI snapshots demonstrate real-time interaction and personalized music recommendations using content-based or hybrid logic.
-
----
-## 🎛️ Frontend Demo (React)
-
-![Frontend Demo](Screenshot 2026-01-05 at 12.36.04 PM.png)
 
 ---
 ## Free Deployment (Render + Vercel)
