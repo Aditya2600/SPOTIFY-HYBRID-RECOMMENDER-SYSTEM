@@ -82,6 +82,15 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
+### ✅ Sample inputs (Streamlit)
+Use these exact lowercase values to test the app locally:
+
+- `mr. brightside` — `the killers`
+- `wonderwall` — `oasis`
+- `come as you are` — `nirvana`
+- `take me out` — `franz ferdinand`
+- `creep` — `radiohead`
+
 ⸻
 
 ## 🔍 Datasets Used
@@ -145,6 +154,29 @@ After clicking “Get Recommendations”, the app displays:
 
 These UI snapshots demonstrate real-time interaction and personalized music recommendations using content-based or hybrid logic.
 
+---
+## 🎛️ Frontend Demo (React)
+
+![Frontend Demo](Screenshot 2026-01-05 at 12.36.04 PM.png)
+
+---
+## Free Deployment (Render + Vercel)
+
+This repo includes config files for a free-tier setup:
+- Render API: `render.yaml`
+- Vercel frontend: `vercel.json`
+
+### Render (API)
+1. Create a new Render Blueprint from this repo.
+2. Once deployed, copy the API URL (example: `https://your-service.onrender.com`).
+3. In Render, set `CORS_ALLOW_ORIGINS` to your frontend URL.
+
+### Vercel (Frontend)
+1. Import the repo in Vercel (it reads `vercel.json`).
+2. If prompted for a root directory, set it to `frontend`.
+3. Add `VITE_API_URL` and set it to your Render API URL.
+
+---
 ## ☁️ Deployment Overview
 
 This project is deployed using a fully automated CI/CD pipeline on AWS. The infrastructure and flow include:
@@ -222,5 +254,3 @@ Aditya Meshram
 
 
 ⸻
-
-

@@ -13,7 +13,7 @@ from scipy.sparse import save_npz
 CLEANED_DATA_PATH = "data/cleaned_data.csv"
 
 # cols to transform
-frequency_enode_cols = ['year']
+frequency_encode_cols = ['year']
 ohe_cols = ['artist',"time_signature","key"]
 tfidf_col = 'tags'
 standard_scale_cols = ["duration_ms","loudness","tempo"]
@@ -38,7 +38,7 @@ def train_transformer(data):
     """
     # transformer 
     transformer = ColumnTransformer(transformers=[
-        ("frequency_encode", CountEncoder(normalize=True,return_df=True), frequency_enode_cols),
+        ("frequency_encode", CountEncoder(normalize=True,return_df=True), frequency_encode_cols),
         ("ohe", OneHotEncoder(handle_unknown="ignore"), ohe_cols),
         ("tfidf", TfidfVectorizer(max_features=85), tfidf_col),
         ("standard_scale", StandardScaler(), standard_scale_cols),
